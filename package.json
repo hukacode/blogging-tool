@@ -18,6 +18,7 @@
   "activationEvents": [
     "onLanguage:markdown"
   ],
+	"license": "MIT",
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
