@@ -24,6 +24,10 @@
       {
         "command": "garden-helper.changeUpdatedDate",
         "title": "garden-helper: Change Updated Date"
+      },
+      {
+        "command": "garden-helper.addTwoSpacesAtTheEndSentence",
+        "title": "garden-helper: Add 2 spaces at the end of sentence"
       }
     ]
   },
