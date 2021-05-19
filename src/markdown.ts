@@ -17,16 +17,16 @@ export namespace Markdown {
     let linesToUpdate: EditedLine[] = [];
     let countHeader = 0;
     let firstLine = textEditor.document.lineAt(0);
-    let bulletRegex = new RegExp("^(-|\\+|\\*|\\d\\.)\\s", "g");
+    let bulletRegex = new RegExp("^(-|\\+|\\*|\\d\\.)\\s");
 
     if (firstLine.text == "---" || firstLine.text == "+++") {
       countHeader++;
     }
 
     for (let i = 0; i < textEditor.document.lineCount; i++) {
-      let currentLine = textEditor.document.lineAt(i).text;
+      let currentLine = textEditor.document.lineAt(i).text.trim();
 
-      if (currentLine.trim() == "") {
+      if (currentLine == "") {
         continue;
       }
 
@@ -35,7 +35,7 @@ export namespace Markdown {
         continue;
       }
 
-      if (bulletRegex.test(currentLine.trim()) || currentLine.endsWith("  ")) {
+      if (bulletRegex.test(currentLine) || currentLine.endsWith("  ")) {
         continue;
       }
 
