@@ -29,7 +29,23 @@
         "command": "garden-helper.addTwoSpacesAtTheEndSentence",
         "title": "garden-helper: Add 2 spaces at the end of sentence"
       }
-    ]
+    ],
+		"configuration": {
+			"type": "object",
+			"title": "garden-helper configuration",
+			"properties": {
+				"garden-helper.enableAddingSpaces": {
+					"type": "boolean",
+					"default": true,
+					"description": "Enable automatically adding 2 spaces at the end of sentences"
+				},
+				"garden-helper.updatedDateFieldName": {
+					"type": "string",
+					"default": "lastmod",
+					"description": "Name of updated date field in front matter"
+				}
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

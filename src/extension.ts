@@ -1,6 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import { EditedLine } from './edited-line';
 import { FrontMatter } from './front-matter';
 import { Markdown } from './markdown';
 
@@ -30,8 +31,25 @@ export function activate(context: vscode.ExtensionContext) {
   vscode.workspace.onWillSaveTextDocument((documentWillSave: vscode.TextDocumentWillSaveEvent) => {
     if (documentWillSave.document.languageId === "markdown" && documentWillSave.document.uri.scheme === "file") {
       // document.fileName
-      FrontMatter.changeUpdatedDate();
-      Markdown.addTwoSpacesAtTheEndSentence();
+
+      let linesToUpdate: EditedLine[] = [];
+
+      linesToUpdate = linesToUpdate.concat(Markdown.addTwoSpacesAtTheEndSentence());
+      linesToUpdate = linesToUpdate.concat(FrontMatter.changeUpdatedDate());
+
+      const textEditor = vscode.window.activeTextEditor;
+
+      if (textEditor != undefined) {
+        textEditor.edit(editBuilder => {
+          linesToUpdate.forEach(line => {
+            editBuilder.replace(
+              new vscode.Range(new vscode.Position(line.line, line.begin),
+                new vscode.Position(line.line, line.end)),
+              line.lineContent
+            );
+          })
+        }).then(() => { });
+      }
     }
   });
 

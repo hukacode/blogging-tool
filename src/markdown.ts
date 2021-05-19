@@ -1,20 +1,25 @@
 import * as vscode from 'vscode';
+import { Setting } from './setting';
+import { EditedLine } from './edited-line';
 
 export namespace Markdown {
 
-  export function addTwoSpacesAtTheEndSentence() {
+  export function addTwoSpacesAtTheEndSentence(): EditedLine[] {
+    if (!Setting.EnableAddingSpaces) {
+      return [];
+    }
     const textEditor = vscode.window.activeTextEditor;
 
     if (!textEditor || textEditor.document.lineCount == 0) {
-      return;
+      return [];
     }
 
-    let linesToUpdate: { line: any, begin: any, end: any, lineContent: any }[] = [];
+    let linesToUpdate: EditedLine[] = [];
     let countHeader = 0;
     let firstLine = textEditor.document.lineAt(0);
     let bulletRegex = new RegExp("^(-|\\+|\\*|\\d\\.)\\s", "g");
 
-    if (firstLine.text == "---" || firstLine.text == "+++" ) {
+    if (firstLine.text == "---" || firstLine.text == "+++") {
       countHeader++;
     }
 
@@ -44,14 +49,6 @@ export namespace Markdown {
       }
     }
 
-    textEditor.edit(editBuilder => {
-      linesToUpdate.forEach(line => {
-        editBuilder.replace(
-          new vscode.Range(new vscode.Position(line.line, line.begin),
-            new vscode.Position(line.line, line.end)),
-          line.lineContent
-        );
-      })
-    }).then(() => { });
+    return linesToUpdate;
   }
 }
