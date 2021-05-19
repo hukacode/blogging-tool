@@ -2,7 +2,7 @@
   "name": "garden-helper",
   "displayName": "Garden Helper",
   "description": "A garden helper",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "engines": {
     "vscode": "^1.56.0"
   },
