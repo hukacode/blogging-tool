@@ -35,7 +35,7 @@ export namespace Markdown {
         continue;
       }
 
-      if (bulletRegex.test(currentLine) || currentLine.endsWith("  ")) {
+      if (bulletRegex.test(currentLine.trim()) || currentLine.endsWith("  ")) {
         continue;
       }
 
