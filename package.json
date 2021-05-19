@@ -19,6 +19,11 @@
     "onLanguage:markdown"
   ],
 	"license": "MIT",
+	"keywords": [
+		"markdown",
+		"digital garden",
+		"note"
+	],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
