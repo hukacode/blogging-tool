@@ -5,7 +5,13 @@ export namespace FrontMatter {
   export function changeUpdatedDate() {
     const textEditor = vscode.window.activeTextEditor;
 
-    if (!textEditor) {
+    if (!textEditor || textEditor.document.lineCount == 0) {
+      return;
+    }
+
+    let firstLine = textEditor.document.lineAt(0).text;
+
+    if (firstLine != "---" && firstLine != "+++") {
       return;
     }
 
@@ -15,18 +21,18 @@ export namespace FrontMatter {
     let yyyy = today.getFullYear();
     let currentYYYYMMDD = yyyy + '-' + mm + '-' + dd;
 
-    if (textEditor.document.lineCount == 0 || textEditor.document.lineAt(0).text != "---") {
-      return;
-    }
-
     for (let i = 0; i < textEditor.document.lineCount; i++) {
       let textLine = textEditor.document.lineAt(i);
       let range = new vscode.Range(new vscode.Position(i, textLine.range.start.character), new vscode.Position(i, textLine.range.end.character));
-      let text = textEditor.document.getText(range);
+      let currentLine = textEditor.document.getText(range);
 
-      if (text.startsWith("lastmod") || text.startsWith("modified")) {
-        text = text.replace(new RegExp("(lastmod|modified)([:=])(.+)*"), '$1$2 ' + currentYYYYMMDD);
-        textEditor.edit(editBuilder => editBuilder.replace(range, text));
+      if (currentLine.startsWith("lastmod") || currentLine.startsWith("modified")) {
+        let textUpdatedDate = currentLine.replace(new RegExp("(lastmod|modified)([:=])(.+)*"), '$1$2 ' + currentYYYYMMDD);
+
+        if (currentLine != textUpdatedDate) {
+          textEditor.edit(editBuilder => editBuilder.replace(range, textUpdatedDate));
+          break;
+        }
       }
     }
   }
