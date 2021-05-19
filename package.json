@@ -2,7 +2,7 @@
   "name": "garden-helper",
   "displayName": "Garden Helper",
   "description": "A garden helper",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "engines": {
     "vscode": "^1.56.0"
   },
@@ -18,12 +18,12 @@
   "activationEvents": [
     "onLanguage:markdown"
   ],
-	"license": "MIT",
-	"keywords": [
-		"markdown",
-		"digital garden",
-		"note"
-	],
+  "license": "MIT",
+  "keywords": [
+    "markdown",
+    "digital garden",
+    "note"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
