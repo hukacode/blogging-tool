@@ -2,7 +2,7 @@
   "name": "garden-helper",
   "displayName": "Garden Helper",
   "description": "A garden helper",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "engines": {
     "vscode": "^1.56.0"
   },
@@ -30,20 +30,20 @@
         "title": "garden-helper: Add 2 spaces at the end of sentence"
       }
     ],
-		"configuration": {
-			"type": "object",
-			"title": "garden-helper configuration",
-			"properties": {
-				"garden-helper.enableAddingSpaces": {
-					"type": "boolean",
-					"default": true,
-					"description": "Enable automatically adding 2 spaces at the end of sentences"
-				},
-				"garden-helper.updatedDateFieldName": {
-					"type": "string",
-					"default": "lastmod",
-					"description": "Name of updated date field in front matter"
-				}
+    "configuration": {
+      "type": "object",
+      "title": "garden-helper configuration",
+      "properties": {
+        "garden-helper.enableAddingSpaces": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable automatically adding 2 spaces at the end of sentences"
+        },
+        "garden-helper.updatedDateFieldName": {
+          "type": "string",
+          "default": "lastmod",
+          "description": "Name of updated date field in front matter"
+        }
       }
     }
   },
