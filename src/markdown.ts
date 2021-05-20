@@ -24,7 +24,7 @@ export namespace Markdown {
     }
 
     for (let i = 0; i < textEditor.document.lineCount; i++) {
-      let currentLine = textEditor.document.lineAt(i).text.trim();
+      let currentLine = textEditor.document.lineAt(i).text;
 
       if (currentLine == "") {
         continue;
@@ -35,7 +35,7 @@ export namespace Markdown {
         continue;
       }
 
-      if (bulletRegex.test(currentLine) || currentLine.endsWith("  ") || currentLine.startsWith("#")) {
+      if (bulletRegex.test(currentLine.trim()) || currentLine.endsWith("  ") || currentLine.trim().startsWith("#")) {
         continue;
       }
 
