@@ -1,7 +1,7 @@
 {
-  "name": "garden-helper",
-  "displayName": "Garden Helper",
-  "description": "A garden helper",
+  "name": "blogging-tool",
+  "displayName": "Blogging tool",
+  "description": "A blogging tool",
   "version": "0.0.10",
   "engines": {
     "vscode": "^1.56.0"
@@ -9,9 +9,9 @@
   "publisher": "Huka",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hukacode/garden-helper.git"
+    "url": "https://github.com/hukacode/blogging-tool.git"
   },
-  "homepage": "https://github.com/hukacode/garden-helper/blob/main/README.md",
+  "homepage": "https://github.com/hukacode/blogging-tool/blob/main/README.md",
   "categories": [
     "Other"
   ],
@@ -28,24 +28,24 @@
   "contributes": {
     "commands": [
       {
-        "command": "garden-helper.changeUpdatedDate",
-        "title": "garden-helper: Change Updated Date"
+        "command": "blogging-tool.changeUpdatedDate",
+        "title": "blogging-tool: Change Updated Date"
       },
       {
-        "command": "garden-helper.addTwoSpacesAtTheEndSentence",
-        "title": "garden-helper: Add 2 spaces at the end of sentence"
+        "command": "blogging-tool.addTwoSpacesAtTheEndSentence",
+        "title": "blogging-tool: Add 2 spaces at the end of sentence"
       }
     ],
     "configuration": {
       "type": "object",
-      "title": "garden-helper configuration",
+      "title": "blogging-tool configuration",
       "properties": {
-        "garden-helper.enableAddingSpaces": {
+        "blogging-tool.enableAddingSpaces": {
           "type": "boolean",
           "default": true,
           "description": "Enable automatically adding 2 spaces at the end of sentences"
         },
-        "garden-helper.updatedDateFieldName": {
+        "blogging-tool.updatedDateFieldName": {
           "type": "string",
           "default": "lastmod",
           "description": "Name of updated date field in front matter"

@@ -14,5 +14,5 @@ lastmod: 2021-05-19
 ### Extension Settings  
 | Setting                              | Description | Default                                                      |  
 | ------------------------------------ | ----------- | ------------------------------------------------------------ |  
-| `garden-helper.enableAddingSpaces`   | true        | Enable automatically adding 2 spaces at the end of sentences |  
-| `garden-helper.updatedDateFieldName` | lastmod     | Name of updated date field in front matter                   |  
+| `blogging-tool.enableAddingSpaces`   | true        | Enable automatically adding 2 spaces at the end of sentences |  
+| `blogging-tool.updatedDateFieldName` | lastmod     | Name of updated date field in front matter                   |  
