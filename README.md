@@ -48,4 +48,3 @@ Then format with "All in one"
 | ------------------------------------ | ------- | ------------------------------------------------------------ |  
 | `blogging-tool.enableAddingSpaces`   | true    | Enable automatically adding 2 spaces at the end of sentences |  
 | `blogging-tool.updatedDateFieldName` | lastmod | Name of updated date field in front matter                   |  
-
