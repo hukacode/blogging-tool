@@ -12,7 +12,7 @@ lastmod: 2021-05-19
 - Automatically adding 2 spaces at the end of sentences on saving.
 
 ### Extension Settings  
-| Setting                              | Description | Default                                                      |  
-| ------------------------------------ | ----------- | ------------------------------------------------------------ |  
-| `blogging-tool.enableAddingSpaces`   | true        | Enable automatically adding 2 spaces at the end of sentences |  
-| `blogging-tool.updatedDateFieldName` | lastmod     | Name of updated date field in front matter                   |  
+| Setting                              | Default | Description                                                  |  
+| ------------------------------------ | ------- | ------------------------------------------------------------ |  
+| `blogging-tool.enableAddingSpaces`   | true    | Enable automatically adding 2 spaces at the end of sentences |  
+| `blogging-tool.updatedDateFieldName` | lastmod | Name of updated date field in front matter                   |  
