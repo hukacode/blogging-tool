@@ -34,6 +34,14 @@
       {
         "command": "blogging-tool.addTwoSpacesAtTheEndSentence",
         "title": "blogging-tool: Add 2 spaces at the end of sentence"
+      },
+      {
+        "command": "blogging-tool.buildTableWithEmptyHeader",
+        "title": "blogging-tool: Build table (with empty header)"
+      },
+      {
+        "command": "blogging-tool.buildTableWithFirstLineIsHeader",
+        "title": "blogging-tool: Build table (with first line is header)"
       }
     ],
     "configuration": {

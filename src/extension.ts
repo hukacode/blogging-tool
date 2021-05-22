@@ -4,20 +4,21 @@ import * as vscode from 'vscode';
 import { EditedLine } from './edited-line';
 import { FrontMatter } from './front-matter';
 import { Markdown } from './markdown';
+import { Table } from './table';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "blogging-tool" is now active!');
+  // Use the console to output diagnostic information (console.log) and errors (console.error)
+  // This line of code will only be executed once when your extension is activated
+  console.log('Congratulations, your extension "blogging-tool" is now active!');
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
+  // The command has been defined in the package.json file
+  // Now provide the implementation of the command with registerCommand
+  // The commandId parameter must match the command field in package.json
   let changeUpdatedDataCommand = vscode.commands.registerCommand('blogging-tool.changeUpdatedDate', () => {
-		// The code you place here will be executed every time your command is executed
+    // The code you place here will be executed every time your command is executed
 
     FrontMatter.changeUpdatedDate();
   });
@@ -27,6 +28,16 @@ export function activate(context: vscode.ExtensionContext) {
     Markdown.addTwoSpacesAtTheEndSentence();
   });
   context.subscriptions.push(addTwoSpacesAtTheEndSentenceCommand);
+
+  let buildTableWithEmptyHeaderCommand = vscode.commands.registerCommand('blogging-tool.buildTableWithEmptyHeader', () => {
+    Table.buildTableWithEmptyHeader();
+  });
+  context.subscriptions.push(buildTableWithEmptyHeaderCommand);
+
+  let buildTableWithFirstLineIsHeaderCommand = vscode.commands.registerCommand('blogging-tool.buildTableWithFirstLineIsHeader', () => {
+    Table.buildTableWithFirstLineIsHeader();
+  });
+  context.subscriptions.push(buildTableWithFirstLineIsHeaderCommand);
 
   vscode.workspace.onWillSaveTextDocument((documentWillSave: vscode.TextDocumentWillSaveEvent) => {
     if (documentWillSave.document.languageId === "markdown" && documentWillSave.document.uri.scheme === "file") {
@@ -57,4 +68,4 @@ export function activate(context: vscode.ExtensionContext) {
 
 
 // this method is called when your extension is deactivated
-export function deactivate() {}
+export function deactivate() { }
