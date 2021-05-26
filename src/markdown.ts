@@ -4,7 +4,7 @@ import { EditedLine } from './edited-line';
 
 export namespace Markdown {
 
-  export function addTwoSpacesAtTheEndSentence(): EditedLine[] {
+  export function addTwoSpacesAtTheEndLine(): EditedLine[] {
     if (!Setting.EnableAddingSpaces) {
       return [];
     }

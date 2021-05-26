@@ -32,8 +32,8 @@
         "title": "blogging-tool: Change Updated Date"
       },
       {
-        "command": "blogging-tool.addTwoSpacesAtTheEndSentence",
-        "title": "blogging-tool: Add 2 spaces at the end of sentence"
+        "command": "blogging-tool.addTwoSpacesAtTheEndLine",
+        "title": "blogging-tool: Add 2 spaces at the end of lines"
       },
       {
         "command": "blogging-tool.buildTableWithEmptyHeader",
@@ -51,7 +51,7 @@
         "blogging-tool.enableAddingSpaces": {
           "type": "boolean",
           "default": true,
-          "description": "Enable automatically adding 2 spaces at the end of sentences"
+          "description": "Enable automatically adding 2 spaces at the end of lines"
         },
         "blogging-tool.updatedDateFieldName": {
           "type": "string",

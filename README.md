@@ -9,7 +9,7 @@
   +++ (or ---)  
 ```  
 
-- Automatically adding 2 spaces at the end of sentences on saving.
+- Automatically adding 2 spaces at the end of lines on saving.
 - Build table (with empty header)
 ```markdown  
   ### Before  
@@ -44,3 +44,5 @@
 ```  
 
 ### Please check Feature Contributions for extension settings
+
+### Feel free to suggest new feature

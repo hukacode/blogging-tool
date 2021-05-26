@@ -12,8 +12,8 @@ suite("Markdown", function () {
     const document = await vscode.workspace.openTextDocument(uri)
     const editor = await vscode.window.showTextDocument(document)
 
-    vscode.commands.executeCommand('blogging-tool.addTwoSpacesAtTheEndSentence');
-    vscode.commands.executeCommand('blogging-tool.addTwoSpacesAtTheEndSentence');
+    vscode.commands.executeCommand('blogging-tool.addTwoSpacesAtTheEndLine');
+    vscode.commands.executeCommand('blogging-tool.addTwoSpacesAtTheEndLine');
 
     assert.strictEqual(document.lineAt(0).text, '---');
     assert.strictEqual(document.lineAt(1).text, 'title: "Test 1"');
