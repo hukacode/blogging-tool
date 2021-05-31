@@ -21,12 +21,12 @@ suite("Markdown", function () {
     assert.strictEqual(document.lineAt(4).text, '---');
     assert.strictEqual(document.lineAt(5).text, '## Header');
     assert.strictEqual(document.lineAt(6).text, 'Line 1 - test  ');
-    assert.strictEqual(document.lineAt(7).text, '- item1');
-    assert.strictEqual(document.lineAt(8).text, '- item2');
-    assert.strictEqual(document.lineAt(9).text, '  - nested item');
-    assert.strictEqual(document.lineAt(10).text, '+ item3');
-    assert.strictEqual(document.lineAt(11).text, '* item4');
-    assert.strictEqual(document.lineAt(12).text, '1. item5');
+    assert.strictEqual(document.lineAt(7).text, '- item1  ');
+    assert.strictEqual(document.lineAt(8).text, '- item2  ');
+    assert.strictEqual(document.lineAt(9).text, '  - nested item  ');
+    assert.strictEqual(document.lineAt(10).text, '+ item3  ');
+    assert.strictEqual(document.lineAt(11).text, '* item4  ');
+    assert.strictEqual(document.lineAt(12).text, '1. item5  ');
     assert.strictEqual(document.lineAt(13).text, '');
     assert.strictEqual(document.lineAt(14).text, 'Line 2  ');
 

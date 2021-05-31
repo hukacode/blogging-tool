@@ -17,7 +17,6 @@ export namespace Markdown {
     let linesToUpdate: EditedLine[] = [];
     let countHeader = 0;
     let firstLine = textEditor.document.lineAt(0);
-    let bulletRegex = new RegExp("^(-|\\+|\\*|\\d\\.)\\s");
 
     if (firstLine.text == "---" || firstLine.text == "+++") {
       countHeader++;
@@ -35,8 +34,7 @@ export namespace Markdown {
         continue;
       }
 
-      if (bulletRegex.test(currentLine.trim()) || currentLine.endsWith("|")
-        || currentLine.endsWith("  ") || currentLine.trim().startsWith("#") || currentLine.trim().startsWith("```")) {
+      if (currentLine.endsWith("|") || currentLine.endsWith("  ") || currentLine.trim().startsWith("#") || currentLine.trim().startsWith("```")) {
         continue;
       }
 
