@@ -34,8 +34,12 @@ export namespace Markdown {
         continue;
       }
 
-      if (currentLine.endsWith("|") || currentLine.endsWith("  ") || currentLine.trim().startsWith("#") || currentLine.trim().startsWith("```")) {
+      if (currentLine.endsWith("|") || currentLine.endsWith("  ") || currentLine.trim().startsWith("#") || currentLine.trim().startsWith("```") || currentLine.trim() == "") {
         continue;
+      }
+
+      if (currentLine.endsWith(" ")) {
+        currentLine = currentLine.slice(0, -1);
       }
 
       if (countHeader == 0 || countHeader == 2) {

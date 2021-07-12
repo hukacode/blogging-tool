@@ -24,6 +24,10 @@
     "digital garden",
     "note"
   ],
+  "galleryBanner": {
+    "color": "#061526",
+    "theme": "dark"
+  },
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
