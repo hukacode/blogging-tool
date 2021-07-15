@@ -24,30 +24,30 @@ export namespace Markdown {
 
     for (let i = 0; i < textEditor.document.lineCount; i++) {
       let currentLine = textEditor.document.lineAt(i).text;
+      let currentLineTrim = currentLine.trim();
 
-      if (currentLine == "") {
+      if (currentLineTrim == "") {
         continue;
       }
-
-      if (i != 0 && countHeader == 1 && (currentLine == "---" || currentLine == "+++")) {
+      
+      if (i != 0 && countHeader == 1 && (currentLineTrim == "---" || currentLineTrim == "+++")) {
         countHeader++;
         continue;
       }
 
-      if (currentLine.endsWith("|") || currentLine.endsWith("  ") || currentLine.trim().startsWith("#") || currentLine.trim().startsWith("```") || currentLine.trim() == "") {
+      if (currentLine.endsWith("|") || currentLine.endsWith("  ") || currentLineTrim.startsWith("#")
+        || currentLineTrim.startsWith("```")) {
         continue;
       }
-
-      if (currentLine.endsWith(" ")) {
-        currentLine = currentLine.slice(0, -1);
-      }
+      
+      let currentLineTrimEnd = currentLine.trimEnd();
 
       if (countHeader == 0 || countHeader == 2) {
         linesToUpdate.push({
           line: i,
           begin: 0,
           end: currentLine.length,
-          lineContent: currentLine + "  "
+          lineContent: currentLineTrimEnd + "  "
         });
       }
     }
