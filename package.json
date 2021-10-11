@@ -36,7 +36,7 @@
         "title": "blogging-tool: Change Updated Date"
       },
       {
-        "command": "blogging-tool.addTwoSpacesAtTheEndLine",
+        "command": "blogging-tool.addTwoSpacesAtTheEndOfLine",
         "title": "blogging-tool: Add 2 spaces at the end of lines"
       },
       {

@@ -24,10 +24,10 @@ export function activate(context: vscode.ExtensionContext) {
   });
   context.subscriptions.push(changeUpdatedDataCommand);
 
-  let addTwoSpacesAtTheEndLineCommand = vscode.commands.registerCommand('blogging-tool.addTwoSpacesAtTheEndLine', () => {
-    Markdown.addTwoSpacesAtTheEndLine();
+  let addTwoSpacesAtTheEndOfLineCommand = vscode.commands.registerCommand('blogging-tool.addTwoSpacesAtTheEndOfLine', () => {
+    Markdown.addTwoSpacesAtTheEndOfLine();
   });
-  context.subscriptions.push(addTwoSpacesAtTheEndLineCommand);
+  context.subscriptions.push(addTwoSpacesAtTheEndOfLineCommand);
 
   let buildTableWithEmptyHeaderCommand = vscode.commands.registerCommand('blogging-tool.buildTableWithEmptyHeader', () => {
     Table.buildTableWithEmptyHeader();
@@ -45,7 +45,7 @@ export function activate(context: vscode.ExtensionContext) {
 
       let linesToUpdate: EditedLine[] = [];
 
-      linesToUpdate = linesToUpdate.concat(Markdown.addTwoSpacesAtTheEndLine());
+      linesToUpdate = linesToUpdate.concat(Markdown.addTwoSpacesAtTheEndOfLine());
       linesToUpdate = linesToUpdate.concat(FrontMatter.changeUpdatedDate());
 
       const textEditor = vscode.window.activeTextEditor;
