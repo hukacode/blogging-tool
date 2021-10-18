@@ -18,12 +18,8 @@ export namespace Markdown {
     let linesToUpdate: EditedLine[] = [];
     let isInHeader = false;
     let isInCodeBlock = false;
-    let firstLine = textEditor.document.lineAt(0);
-
-    // if (firstLine.text == "---" || firstLine.text == "+++") {
-    //   isInHeader = true;
-    // }
-
+    var numberedListPattern = new RegExp('^\\d\\.\\s');
+    
     for (let i = 0; i < textEditor.document.lineCount; i++) {
       let currentLine = textEditor.document.lineAt(i).text;
       let currentLineTrim = currentLine.trim();
@@ -47,6 +43,14 @@ export namespace Markdown {
       }
 
       if (isInHeader || currentLine.endsWith("|") || currentLine.endsWith("  ") || currentLineTrim.startsWith("#") || isInCodeBlock) {
+        continue;
+      }
+
+      if (currentLineTrim.startsWith("- ") || currentLineTrim.startsWith("+ ") || currentLineTrim.startsWith("* ")) {
+        continue;
+      }
+
+      if (numberedListPattern.test(currentLineTrim)) {
         continue;
       }
       
