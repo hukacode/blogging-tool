@@ -19,7 +19,7 @@ export namespace Markdown {
     let isInHeader = false;
     let isInCodeBlock = false;
     var numberedListPattern = new RegExp('^\\d\\.\\s');
-    
+
     for (let i = 0; i < textEditor.document.lineCount; i++) {
       let currentLine = textEditor.document.lineAt(i).text;
       let currentLineTrim = currentLine.trim();
@@ -27,7 +27,7 @@ export namespace Markdown {
       if (currentLineTrim == "") {
         continue;
       }
-      
+
       if (!isInHeader && (currentLineTrim == "---" || currentLineTrim == "+++")) {
         isInHeader = true;
       } else if (isInHeader && (currentLineTrim == "---" || currentLineTrim == "+++")) {
@@ -42,7 +42,7 @@ export namespace Markdown {
         continue;
       }
 
-      if (isInHeader || currentLine.endsWith("|") || currentLine.endsWith("  ") || currentLineTrim.startsWith("#") || isInCodeBlock) {
+      if (isInHeader || currentLine.endsWith("|") || currentLine.endsWith("  ") || currentLine.endsWith(":") || currentLineTrim.startsWith("#") || isInCodeBlock) {
         continue;
       }
 
@@ -53,7 +53,7 @@ export namespace Markdown {
       if (numberedListPattern.test(currentLineTrim)) {
         continue;
       }
-      
+
       let currentLineTrimEnd = currentLine.trimEnd();
 
       linesToUpdate.push({
