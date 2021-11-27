@@ -46,7 +46,7 @@ export namespace Markdown {
         continue;
       }
 
-      if (currentLineTrim.startsWith("- ") || currentLineTrim.startsWith("+ ") || currentLineTrim.startsWith("* ")) {
+      if (currentLineTrim.startsWith("- ") || currentLineTrim.startsWith("+ ") || currentLineTrim.startsWith("* ") || currentLineTrim.startsWith("> ")) {
         continue;
       }
 
