@@ -18,7 +18,7 @@ export namespace Markdown {
     let linesToUpdate: EditedLine[] = [];
     let isInHeader = false;
     let isInCodeBlock = false;
-    var numberedListPattern = new RegExp('^\\d\\.\\s');
+    var numberedListPattern = new RegExp('^\\d+\\.\\s');
 
     for (let i = 0; i < textEditor.document.lineCount; i++) {
       let currentLine = textEditor.document.lineAt(i).text;
