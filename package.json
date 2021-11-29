@@ -2,7 +2,7 @@
   "name": "blogging-tool",
   "displayName": "Blogging tool",
   "description": "A blogging tool",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "engines": {
     "vscode": "^1.56.0"
   },
