@@ -1,11 +1,12 @@
 import * as vscode from 'vscode';
-import { Setting } from './setting';
 import { EditedLine } from './edited-line';
+import { Setting } from './setting';
 
 export namespace Markdown {
 
   export function addTwoSpacesAtTheEndOfLine(): EditedLine[] {
-    if (!Setting.EnableAddingSpaces) {
+    let setting = new Setting();
+    if (!setting.EnableAddingSpaces) {
       return [];
     }
 

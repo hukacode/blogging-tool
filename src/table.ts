@@ -1,5 +1,4 @@
 import * as vscode from 'vscode';
-import { Setting } from './setting';
 
 export namespace Table {
 

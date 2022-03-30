@@ -1,10 +1,11 @@
 import * as vscode from 'vscode';
-import { Setting } from './setting';
 import { EditedLine } from './edited-line';
+import { Setting } from './setting';
 
 export namespace FrontMatter {
 
   export function changeUpdatedDate(): EditedLine[] {
+    let setting = new Setting();
     const textEditor = vscode.window.activeTextEditor;
 
     if (!textEditor || textEditor.document.lineCount == 0) {
@@ -26,7 +27,7 @@ export namespace FrontMatter {
 
     for (let i = 0; i < textEditor.document.lineCount; i++) {
       let currentLine = textEditor.document.lineAt(i).text;
-      let updatedDateFieldName = Setting.UpdatedDateFieldName;
+      let updatedDateFieldName = setting.UpdatedDateFieldName;
 
       if (currentLine.startsWith(updatedDateFieldName)) {
         let textUpdatedDate = currentLine.replace(new RegExp("(" + updatedDateFieldName + ")([:=])(.+)*"), '$1$2 ' + currentYYYYMMDD);
