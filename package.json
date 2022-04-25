@@ -46,6 +46,10 @@
       {
         "command": "blogging-tool.buildTableWithFirstLineIsHeader",
         "title": "blogging-tool: Build table (with first line is header)"
+      },
+      {
+        "command": "blogging-tool.convertToWikilink",
+        "title": "blogging-tool: Convert selected texts to Wikilink with an alias"
       }
     ],
     "configuration": {

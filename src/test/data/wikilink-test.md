@@ -1,0 +1,1 @@
+abc This text contains Tiếng Việt & English DEF  

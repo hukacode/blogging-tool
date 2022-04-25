@@ -11,6 +11,12 @@
 - Build table (with first line is header)  
 <img src=https://raw.githubusercontent.com/hukacode/blogging-tool/main/demo/create-table-with-first-line-header.gif?>  
 
+- Convert selected texts to Wikilink with an alias
+```
+Input: This text contains Tiếng Việt & English
+Output: [[this-text-contains-tieng-viet-and-english|This text contains Tiếng Việt & English]]
+```
+
 ### Please check Feature Contributions for extension settings
 
 ### Feel free to suggest new feature

@@ -5,6 +5,7 @@ import { EditedLine } from './edited-line';
 import { FrontMatter } from './front-matter';
 import { Markdown } from './markdown';
 import { Table } from './table';
+import { TextConverter } from './text-converter';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -39,6 +40,11 @@ export function activate(context: vscode.ExtensionContext) {
   });
   context.subscriptions.push(buildTableWithFirstLineIsHeaderCommand);
 
+  let convertToWikilink = vscode.commands.registerCommand('blogging-tool.convertToWikilink', () => {
+    TextConverter.convertToWikilink();
+  });
+  context.subscriptions.push(convertToWikilink);
+
   vscode.workspace.onWillSaveTextDocument((documentWillSave: vscode.TextDocumentWillSaveEvent) => {
     if (documentWillSave.document.languageId === "markdown" && documentWillSave.document.uri.scheme === "file") {
       // document.fileName
@@ -69,3 +75,8 @@ export function activate(context: vscode.ExtensionContext) {
 
 // this method is called when your extension is deactivated
 export function deactivate() { }
+
+export function convertToWikilink() {
+  throw new Error('Function not implemented.');
+}
+
