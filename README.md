@@ -6,7 +6,7 @@
 
 - Build table (with empty header)  
 
-    Input (separeted with a tab or 2 spaces)
+    Input (separated with a tab or 2 spaces)
     ```
     column 1  column 2  column 3  column 4
     column 1  column 2  column 3  column 4
@@ -15,16 +15,15 @@
 
     Output
     ```markdown
-    |  |  |  |  |
-    |-|-|-|-|
-    |column 1 | column 2 | column 3 | column 4
-    column 1 | column 2 | column 3 | column 4
-    column 1 | column 2 | column 3 | column 4|
+    |column 1  |column 2  |column 3  |column 4|
+    |----------|----------|----------|--------|
+    |column 1  |column 2  |column 3  |column 4|
+    |column 1  |column 2  |column 3  |column 4|
     ```
 
 - Build table (with first line is header)  
 
-    Input (separeted with a tab or 2 spaces)
+    Input (separated with a tab or 2 spaces)
     ```
     header 1  header 2  header 3  header 4
     column 1  column 2  column 3  column 4
@@ -45,6 +44,6 @@
     Output: [[this-text-contains-tieng-viet-and-english|This text contains Tiếng Việt & English]]
     ```
 
-## Please check Feature Contributions for extension settings
+## Acknowledge
 
-## Feel free to suggest new feature
+- <a href="https://www.freepik.com/free-vector/book-pen-cartoon-icon-illustration-education-object-icon-concept-isolated-flat-cartoon-style_10848274.htm#query=notebook%20logo&position=6&from_view=search&track=ais">Image by catalyststuff</a> on Freepik
