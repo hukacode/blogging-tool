@@ -15,24 +15,25 @@
 
     Output
     ```markdown
-    |column 1  |column 2  |column 3  |column 4|
-    |----------|----------|----------|--------|
-    |column 1  |column 2  |column 3  |column 4|
-    |column 1  |column 2  |column 3  |column 4|
+    |  |  |  |  |
+    |-|-|-|-|
+    |column 1 | column 2 | column 3 | column 4
+    column 1 | column 2 | column 3 | column 4
+    column 1 | column 2 | column 3 | column 4|
     ```
 
 - Build table (with first line is header)  
 
     Input (separated with a tab or 2 spaces)
     ```
-    header 1  header 2  header 3  header 4
+    column 1  column 2  column 3  column 4
     column 1  column 2  column 3  column 4
     column 1  column 2  column 3  column 4
     ```
 
     Output
     ```markdown
-    |header 1  |header 2  |header 3  |header 4|
+    |column 1  |column 2  |column 3  |column 4|
     |----------|----------|----------|--------|
     |column 1  |column 2  |column 3  |column 4|
     |column 1  |column 2  |column 3  |column 4|
