@@ -62,6 +62,11 @@
           "default": true,
           "description": "Enable automatically adding 2 spaces at the end of lines"
         },
+        "blogging-tool.excludeFilesAddingSpaces": {
+          "type": "string",
+          "default": "",
+          "description": "Separated by ;"
+        },
         "blogging-tool.updatedDateFieldName": {
           "type": "string",
           "default": "lastmod",

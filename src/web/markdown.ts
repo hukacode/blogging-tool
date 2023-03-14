@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import { EditedLine } from './edited-line';
 import { Setting } from './setting';
+import { log } from 'console';
 
 export namespace Markdown {
 
@@ -14,6 +15,14 @@ export namespace Markdown {
 
     if (!textEditor || textEditor.document.lineCount == 0) {
       return [];
+    }
+
+    if (setting.ExcludeFilesAddingSpaces) {
+      for (let item of setting.ExcludeFilesAddingSpaces.split(";")) {  
+        if (textEditor.document.fileName.includes(item)) {
+          return [];
+        }
+      }   
     }
 
     let linesToUpdate: EditedLine[] = [];
